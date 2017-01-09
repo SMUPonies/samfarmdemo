@@ -3,7 +3,7 @@ version: 0.0
 environment_variables:
     plaintext:
         "INPUT_FILE": "saml.yaml"
-        "S3_BUCKET": "codebuild-demo-test-roryj"
+        "S3_BUCKET": "ddbucketofun"
 
 containers:
     LambdaFunctions:
