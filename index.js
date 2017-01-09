@@ -5,7 +5,7 @@ exports.handler = (event, context, callback) => {
 
     emitLambdaAge();
 
-    var samCount = 20;
+    var samCount = 2;
     var samMultiplier = process.env.SAM_MULTIPLIER;
     var totalSAMs = samCount * samMultiplier;
 
