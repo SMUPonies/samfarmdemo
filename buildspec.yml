@@ -1,4 +1,4 @@
-version: 0.0
+version: 0.1
 
 environment_variables:
     plaintext:
@@ -8,7 +8,7 @@ environment_variables:
 containers:
     LambdaFunctions:
         phases:
-            during_build:
+            build:
                 commands:
                     - npm install moment
                     - aws cloudformation package --template-file $INPUT_FILE --s3-bucket $S3_BUCKET --output-template-file post-saml.yaml
