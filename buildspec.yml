@@ -5,14 +5,12 @@ environment_variables:
         "INPUT_FILE": "saml.yaml"
         "S3_BUCKET": "ddbucketofun"
 
-containers:
-    LambdaFunctions:
-        phases:
-            build:
-                commands:
-                    - npm install moment
-                    - aws cloudformation package --template-file $INPUT_FILE --s3-bucket $S3_BUCKET --output-template-file post-saml.yaml
-        artifacts:
-            files:
-                - post-saml.yaml
-                - beta.json
+phases:
+    build:
+        commands:
+            - npm install moment
+            - aws cloudformation package --template-file $INPUT_FILE --s3-bucket $S3_BUCKET --output-template-file post-saml.yaml
+artifacts:
+    files:
+        - post-saml.yaml
+        - beta.json
